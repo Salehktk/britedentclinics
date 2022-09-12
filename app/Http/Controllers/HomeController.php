@@ -1,8 +1,8 @@
 <?php
 
 namespace App\Http\Controllers;
-
-use Illuminate\Http\Request;
+use Session;
+use Auth;
 
 class HomeController extends Controller
 {
@@ -23,6 +23,40 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        if(Auth::user()->hasRole('admin')){
+            return redirect()->route('super_dashboard');
+        }
+        if(Auth::user()->hasRole('doctor')){
+            return redirect()->route('doctor_dashboard');
+        }
+        if(Auth::user()->hasRole('patient')){
+            return redirect()->route('patient_dashboard');
+        }
+        else
+        {
+            return redirect()->route('login');
+        }
+    }
+
+    public function logout()
+    {
+        Session::flush();
+        Auth::logout();
+        return redirect()->route('login');
+    }
+
+    public function super_dashboard()
+    {
+        return view('admin.dashboard');
+    }
+
+    public function doctor_dashboard()
+    {
+        return view('doctor.dashboard');
+    }
+
+    public function patient_dashboard()
+    {
+        return view('patient.dashboard');
     }
 }
