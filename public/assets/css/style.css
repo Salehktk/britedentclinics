@@ -1,0 +1,16 @@
+.navbar{
+    background-color: #2a3042 !important;
+}
+
+.nav-link:hover{
+    color: #9fa2aa !important;
+}
+
+.btn-primary{
+    background-color: #556ee6 !important;
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
