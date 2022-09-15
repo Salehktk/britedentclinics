@@ -27,7 +27,6 @@ class RoleSeeder extends Seeder
         Permission::create(['name' => 'unpublish articles']);
 
         // create roles and assign created permissions
-
         $role = Role::create(['name' => 'admin']);
         $role->givePermissionTo([Permission::all()]);
 
@@ -36,8 +35,6 @@ class RoleSeeder extends Seeder
 
         $role = Role::create(['name' => 'patient']);
         $role->givePermissionTo(Permission::all());
-
-       
 
         $user1 = new User;
         $user1->name = 'admin';
@@ -53,14 +50,11 @@ class RoleSeeder extends Seeder
         $user2->save();
         $user2->assignRole('doctor');
 
-
         $user3 = new User;
         $user3->name = 'patient';
         $user3->email = 'patient@gmail.com';
         $user3->password = Hash::make('test1234');
         $user3->save();
         $user3->assignRole('patient');
-
-        
     }
 }

@@ -15,11 +15,11 @@ class LocationSeeder extends Seeder
     public function run()
     {
         $loc1 = new Location();
-        $loc1->name = 'Doncaster';
+        $loc1->name = 'Doncaster VIC, Australia';
         $loc1->save();
 
         $loc2 = new Location();
-        $loc2->name = 'Melbourne';
+        $loc2->name = 'Melbourne VIC, Australia';
         $loc2->save();
     }
 }
