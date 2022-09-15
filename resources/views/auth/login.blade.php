@@ -4,11 +4,11 @@
 
 @section('content')
 <div class="container">
-    <div class="row d-flex align-items-center justify-content-center">
+    <div class="row d-flex align-items-center justify-content-center" style="height: 100vh;">
         <div class="col-6">
-            <div class="card mx-auto border-0 shadow" style="width: 22rem;">
+            <div class="card mx-auto border-0 shadow" style="width: 24rem;">
                 <div class="card-body">
-                    <h5 class="card-title">{{ __('Login') }}</h5>
+                    <h5 class="card-title mb-2">{{ __('Login') }}</h5>
                     <h6 class="card-subtitle mb-2 text-muted">Start your session</h6>
                     <hr>
 
