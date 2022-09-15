@@ -1,5 +1,6 @@
 <?php
 
+use App\Http\Controllers\DoctorController;
 use App\Http\Controllers\ServiceController;
 use App\Http\Controllers\FieldController;
 use App\Http\Controllers\HomeController;
@@ -72,6 +73,14 @@ Route::group(['middleware' => ['auth']], function () {
          * Doctor Routes
          */
         Route::group(['prefix' => 'doctors/'], function () {
+            Route::get('', [DoctorController::class, 'doctors'])->name('doctors');
+
+            Route::get('add', [DoctorController::class, 'add_doctor_view'])->name('add_doctor_view');
+            Route::post('add_doctor', [DoctorController::class, 'add_doctor'])->name('add_doctor');
+
+            Route::get('edit/{id}', [DoctorController::class, 'edit_doctor_view'])->name('edit_doctor_view');
+            Route::get('edit_doctor/{id}', [DoctorController::class, 'edit_doctor'])->name('edit_doctor');
+
             Route::get('fields', [FieldController::class, 'fields'])->name('fields');
             Route::post('add_field', [FieldController::class, 'add_field'])->name('add_field');
             Route::get('delete_field/{id}', [FieldController::class, 'delete_field'])->name('delete_field');

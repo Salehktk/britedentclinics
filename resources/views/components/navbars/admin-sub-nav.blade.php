@@ -7,8 +7,8 @@
         <i class="fad fa-user-doctor"></i> Doctors
     </a>
     <ul class="dropdown-menu dropdown-menu-light">
-        <li><a class="dropdown-item" href="#">All</a></li>
-        <li><a class="dropdown-item" href="#">Add</a></li>
+        <li><a class="dropdown-item" href="{{ route('doctors') }}">All</a></li>
+        <li><a class="dropdown-item" href="{{ route('add_doctor_view') }}">Add</a></li>
         <li><a class="dropdown-item" href="{{ route('fields') }}">Fields</a></li>
     </ul>
 </li>
