@@ -9,7 +9,7 @@
     <ul class="dropdown-menu dropdown-menu-light">
         <li><a class="dropdown-item" href="#">All</a></li>
         <li><a class="dropdown-item" href="#">Add</a></li>
-        <li><a class="dropdown-item" href="#">Fields</a></li>
+        <li><a class="dropdown-item" href="{{ route('fields') }}">Fields</a></li>
     </ul>
 </li>
 <li class="nav-item dropdown">
@@ -44,6 +44,6 @@
     </a>
     <ul class="dropdown-menu dropdown-menu-light">
         <li><a class="dropdown-item" href="{{ route('locations') }}">Locations</a></li>
-        <li><a class="dropdown-item" href="#">Categories</a></li>
+        <li><a class="dropdown-item" href="{{ route('services') }}">Services</a></li>
     </ul>
 </li>

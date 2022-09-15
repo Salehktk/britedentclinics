@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Location;
+use App\Models\Field;
 use Illuminate\Http\Request;
 
-class LocationController extends Controller
+class FieldController extends Controller
 {
     private $_request = null;
     private $_modal = null;
@@ -15,20 +15,20 @@ class LocationController extends Controller
      *
      * @return $reauest, $modal
      */
-    public function __construct(Request $request, Location $modal)
+    public function __construct(Request $request, Field $modal)
     {
         $this->_request = $request;
         $this->_modal = $modal;
     }
 
-    public function locations()
+    public function fields()
     {
-        $locations = $this->_modal->all();
+        $fields = $this->_modal->all();
 
-        return view('admin.locations.all', compact('locations'));
+        return view('admin.doctor.fields', compact('fields'));
     }
 
-    public function add_location()
+    public function add_field()
     {
         $this->validate($this->_request, [
             'name' => 'required',
@@ -42,7 +42,7 @@ class LocationController extends Controller
         return redirect()->back();
     }
 
-    public function delete_location($id)
+    public function delete_field($id)
     {
         try {
             $this->_modal->find($id)->delete();
@@ -53,21 +53,21 @@ class LocationController extends Controller
         }
     }
 
-    public function edit_location_response()
+    public function edit_field_response()
     {
-        $location = $this->_modal->find($this->_request->id);
+        $field = $this->_modal->find($this->_request->id);
 
-        $response = view('response.edit_location', compact('location'))->render();
+        $response = view('response.edit_field', compact('field'))->render();
 
         return response()->json($response);
     }
 
-    public function edit_location($id)
+    public function edit_field($id)
     {
-        $location = $this->_modal->find($id);
-        $location->name = $this->_request->name;
-        $location->update();
+        $field = $this->_modal->find($id);
+        $field->name = $this->_request->name;
+        $field->update();
 
-        return redirect()->route('locations');
+        return redirect()->route('fields');
     }
 }

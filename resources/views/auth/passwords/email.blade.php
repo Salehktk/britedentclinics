@@ -23,16 +23,16 @@
                                 <input id="email" type="email"
                                     class="form-control @error('email') is-invalid @enderror" name="email"
                                     value="{{ old('email') }}" required autocomplete="email" autofocus>
-
-                                @error('email')
-                                    <span class="invalid-feedback" role="alert">
-                                        <strong>{{ $message }}</strong>
-                                    </span>
-                                @enderror
-
-                                <div class="valid-feedback" role="alert">
-                                    Looks good!
-                                </div>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        @if ($errors->has('email'))
+                                            {{ $errors->first('email') }}
+                                        @else
+                                            Please choose a email.
+                                        @endif
+                                    </div>
                             </div>
                             
                             <div class="col-12">

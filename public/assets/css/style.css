@@ -50,7 +50,7 @@
 
 a {
     transition: var(--transition) !important;
-    color: var(--blue-color) !important;
+    /* color: var(--blue-color) !important; */
     font-weight: var(--active-font-weight) !important;
     text-decoration: none !important;
 }
