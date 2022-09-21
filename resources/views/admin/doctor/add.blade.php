@@ -10,14 +10,15 @@
                 @csrf
                 <div class="row mb-2 mx-auto">
                     <div class="col-md-6 mb-2">
-                            <div class=" d-flex flex-column" style="width: 150px; ">
-                              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
-                                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
-                                style="width: 150px; z-index: 1">
-                              <button type="button" class="btn btn-outline-primary btn-sm" data-mdb-ripple-color="dark"
-                                style="z-index: 1;">
+                            <div class=" d-flex flex-column" style="width: 150px;">
+                              <img src="{{asset('images/doctor/profile-image.jpg')}}"
+                                alt="profile image" class="img-fluid img-thumbnail mt-4 mb-2" id="output"
+                                style="width: 150px; height:150px; z-index: 1; " >
+                              <div id="yourBtn" class="btn btn-outline-primary btn-sm"  onclick="getFile()"
+                                ">
                                 Edit profile image
-                              </button>
+                            </div>
+                            <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" onchange="loadFile(event)"/></div>
                             </div>
                     </div>
                 </div>
@@ -25,7 +26,7 @@
                     <div class="col-md-6 mb-2">
                         <label for="name" class="form-label mb-2">Name: <span class="text-danger">*</span></label>
                         <div class="input-group has-validation">
-                            <input type="text" class="form-control" id="name" name="name"
+                            <input type="text" class="form-control" id="name"  name="name"
                                 placeholder="name" required>
                             <div class="valid-feedback">
                                 Looks good!
@@ -51,7 +52,7 @@
                                 @if ($errors->has('email'))
                                     {{ $errors->first('email') }}
                                 @else
-                                    Please choose a email.
+                                    Please choose an email.
                                 @endif
                             </div>
                         </div>
@@ -106,5 +107,19 @@
 @endsection
 
 @section('dashboard_script')
+<script>
+function getFile(){
+     document.getElementById("upfile").click();
+}
 
+var loadFile = function(event) {
+    var reader = new FileReader();
+    reader.onload = function(){
+      var output = document.getElementById('output');
+      output.src = reader.result;
+    };
+    reader.readAsDataURL(event.target.files[0]);
+  };
+
+</script>
 @endsection
