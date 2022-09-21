@@ -10,6 +10,19 @@
                 @csrf
                 <div class="row mb-2 mx-auto">
                     <div class="col-md-6 mb-2">
+                            <div class=" d-flex flex-column" style="width: 150px; ">
+                              <img src="https://mdbcdn.b-cdn.net/img/Photos/new-templates/bootstrap-profiles/avatar-1.webp"
+                                alt="Generic placeholder image" class="img-fluid img-thumbnail mt-4 mb-2"
+                                style="width: 150px; z-index: 1">
+                              <button type="button" class="btn btn-outline-primary btn-sm" data-mdb-ripple-color="dark"
+                                style="z-index: 1;">
+                                Edit profile image
+                              </button>
+                            </div>
+                    </div>
+                </div>
+                <div class="row mb-2 mx-auto">
+                    <div class="col-md-6 mb-2">
                         <label for="name" class="form-label mb-2">Name: <span class="text-danger">*</span></label>
                         <div class="input-group has-validation">
                             <input type="text" class="form-control" id="name" name="name"
