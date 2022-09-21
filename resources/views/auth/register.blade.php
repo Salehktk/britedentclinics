@@ -45,6 +45,22 @@
                         </div>
 
                         <div class="col-md-12">
+                            <label for="phone" class="form-label">{{ __('Phone') }}</label>
+                            
+                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
+                            <div class="valid-feedback">
+                                Looks good!
+                            </div>
+                            <div class="invalid-feedback">
+                                @if ($errors->has('phone'))
+                                    {{ $errors->first('phone') }}
+                                @else
+                                    Please choose a phone.
+                                @endif
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
                             <label for="password" class="form-label">Password</label>
                             
                             <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
@@ -59,6 +75,8 @@
                                 @endif
                             </div>
                         </div>
+
+                        <x-role-list/>
                         
                         <div class="col-12">
                             <div class="col-md-12">
