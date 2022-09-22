@@ -43,8 +43,7 @@ class ServiceController extends Controller
 
         $data = $this->_request->all();
 
-        $this->_modal->name = $data['name'];
-        $this->_modal->save();
+        $this->_modal->create($data);
 
         return redirect()->back();
     }
