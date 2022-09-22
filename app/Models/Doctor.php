@@ -16,4 +16,16 @@ class Doctor extends Model
     {
         $this->belongsTo(User::class, 'user_id');
     }
+
+    // relation with services table
+    public function DoctorServices()
+    {
+        $this->hasMany(DoctorServices::class, 'doctor_id');
+    }
+
+    //reverce relation with services fields table
+    public function DoctorServicesFields()
+    {
+        $this->belongsTo(DoctorServicesFields::class, 'sevice_id');
+    }
 }

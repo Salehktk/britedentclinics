@@ -18,7 +18,7 @@
                                 ">
                                 Edit profile image
                             </div>
-                            <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" onchange="loadFile(event)"/></div>
+                            <div style='height: 0px;width:0px; overflow:hidden;'><input id="upfile" type="file" accept="image/*" onchange="loadFile(event)"/></div>
                             </div>
                     </div>
                 </div>
