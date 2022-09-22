@@ -47,9 +47,7 @@ class FieldController extends Controller
 
         $data = $this->_request->except('_token');
 
-        $this->_modal->name = $data['name'];
-        $this->_modal->service_id = $data['service_id'];
-        $this->_modal->save();
+        $this->_modal->create($data);
 
         return redirect()->back();
     }
