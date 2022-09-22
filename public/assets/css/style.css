@@ -7,9 +7,9 @@
     --main-font-family: 'Poppins', sans-serif;
     --main-heading-size: 2.45rem;
     --main-heading-weight: 500;
-    --sub-heading-size: 1.875rem;
+    --sub-heading-size: 1rem;
     --sub-heading-weight: 400;
-    --paragraph-size: 1rem;
+    --paragraph-size: 0.8rem;
     --paragraph-weight: 300;
     --text-transform: uppercase;
     --letter-spacing: 0.1rem;
@@ -56,13 +56,8 @@ a {
 }
 
 h1 .h1 {
-    text-transform: var(--text-transform) !important;
-    color: var(--black-color) !important;
     font-size: var(--main-heading-size) !important;
     font-weight: var(--main-heading-weight) !important;
-    letter-spacing: var(--letter-spacing) !important;
-    margin-top: 0rem !important;
-    margin-bottom: 0rem !important;
 }
 
 h2,
@@ -71,10 +66,15 @@ h2,
     font-weight: var(--sub-heading-weight) !important;
 }
 
+h5, .h5{
+    font-size: 1rem !important;
+    font-weight: var(--main-heading-weight) !important;
+}
+
 h1, h2, h3, h4, h5 {
     text-transform: var(--text-transform) !important;
     color: var(--black-color) !important;
-    letter-spacing: var(--letter-spacing);
+    letter-spacing: var(--letter-spacing) !important;
     margin-top: 0rem !important;
     margin-bottom: 0rem !important;
 }

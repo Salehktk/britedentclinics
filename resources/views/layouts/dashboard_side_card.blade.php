@@ -7,7 +7,7 @@
         </div>
     </div>
     <div class="card border-0 p-2">
-        <div class="row">
+        <div class="row d-flex align-items-center">
             <div class="col-md-4 text-center">
                 <img src="{{ asset('assets/img/profile.svg') }}" alt="Profile image" height="50">
                 <h5 class="card-title mt-2">{{ auth()->user()->name }}</h5>
