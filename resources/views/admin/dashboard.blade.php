@@ -7,7 +7,7 @@
     <div class="col-md-4 mb-4">
         @include('layouts.dashboard_side_card')
     </div>
-
+    
     <div class="col-md-8 mb-4">
         <div class="row">
             <x-dashboard-cards.tiles name="Apointments" icon="calendar-days" count="74"/>

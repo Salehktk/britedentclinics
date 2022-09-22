@@ -9,34 +9,46 @@ class FieldController extends Controller
 {
     private $_request = null;
     private $_modal = null;
+    private $_services = null;
 
     /**
      * Create a new controller instance.
      *
      * @return $reauest, $modal
      */
-    public function __construct(Request $request, Field $modal)
+    public function __construct(Request $request, Field $modal, ServiceController $services)
     {
         $this->_request = $request;
         $this->_modal = $modal;
+        $this->_services = $services;
+    }
+
+    public function all_fields()
+    {
+        $fields = $this->_modal->all();
+
+        return $fields;
     }
 
     public function fields()
     {
-        $fields = $this->_modal->all();
+        $fields = $this->all_fields();
+        $services = $this->_services->all_services();
 
-        return view('admin.doctor.fields', compact('fields'));
+        return view('admin.doctor.fields', compact('fields', 'services'));
     }
 
     public function add_field()
     {
         $this->validate($this->_request, [
             'name' => 'required',
+            'service_id' => 'required|integer',
         ]);
 
-        $data = $this->_request->all();
+        $data = $this->_request->except('_token');
 
         $this->_modal->name = $data['name'];
+        $this->_modal->service_id = $data['service_id'];
         $this->_modal->save();
 
         return redirect()->back();

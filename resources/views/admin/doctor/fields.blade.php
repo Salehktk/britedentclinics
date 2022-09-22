@@ -38,8 +38,8 @@
                                     </tr>
 
                                     <!-- Delete Modal -->
-                                    <div class="modal fade" id="delete_field_{{ $field->id }}"
-                                        data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1"
+                                    <div class="modal fade" id="delete_field_{{ $field->id }}" data-bs-backdrop="static"
+                                        data-bs-keyboard="false" tabindex="-1"
                                         aria-labelledby="delete_field_{{ $field->id }}Label" aria-hidden="true">
                                         <div class="modal-dialog">
                                             <div class="modal-content">
@@ -74,11 +74,33 @@
                 <div class="col-md-12 col-12">
                     <div class="card border-0 shadow-sm p-3">
                         <h5 class="card-title mb-2">New field</h5>
-                        <form action="{{ route('add_field') }}" method="post" class="row g-3 needs-validation"
-                            novalidate>
+                        <form action="{{ route('add_field') }}" method="post" class="row g-3 needs-validation" novalidate>
                             @csrf
                             <div class="col-md-12 mb-2">
-                                <label for="field" class="form-label mb-2">field: <span class="text-danger">*</span></label>
+                                <label for="service_id" class="form-label mb-2">Service: <span
+                                        class="text-danger">*</span></label>
+                                <div class="input-group has-validation">
+                                    <select name="service_id" id="service_id" class="form-control" required>
+                                        <option value="">Select Service</option>
+                                        @foreach ($services as $service)
+                                            <option value="{{ $service->id }}">{{ $service->name }}</option>
+                                        @endforeach
+                                    </select>
+                                    <div class="valid-feedback">
+                                        Looks good!
+                                    </div>
+                                    <div class="invalid-feedback">
+                                        @if ($errors->has('service_id'))
+                                            {{ $errors->first('service_id') }}
+                                        @else
+                                            Please choose a service.
+                                        @endif
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-12 mb-2">
+                                <label for="field" class="form-label mb-2">field: <span
+                                        class="text-danger">*</span></label>
                                 <div class="input-group has-validation">
                                     <input type="text" class="form-control" id="field" name="name"
                                         placeholder="field" required>

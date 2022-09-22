@@ -21,9 +21,16 @@ class ServiceController extends Controller
         $this->_modal = $modal;
     }
 
-    public function services()
+    public function all_services()
     {
         $services = $this->_modal->all();
+
+        return $services;
+    }
+
+    public function services()
+    {
+        $services = $this->all_services();
 
         return view('admin.services.all', compact('services'));
     }

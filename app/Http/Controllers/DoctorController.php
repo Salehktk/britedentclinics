@@ -23,7 +23,7 @@ class DoctorController extends Controller
 
     public function doctors()
     {
-        $doctors = $this->_modal->whereHas('roles', function($q){
+        $doctors = $this->_modal->whereHas('roles', function ($q) {
             $q->where('name', 'doctor');
         })->get();
 
@@ -42,17 +42,14 @@ class DoctorController extends Controller
 
     public function edit_doctor_view($id)
     {
-        $doctor = $this->_modal->whereHas('roles', function($q){
+        $doctor = $this->_modal->whereHas('roles', function ($q) {
             $q->where('name', 'doctor');
         })
-        ->where('id', $id)->first();
+            ->where('id', $id)->first();
 
-        if($doctor == null)
-        {
+        if ($doctor == null) {
             return redirect()->route('doctors');
-        }
-        else
-        {
+        } else {
             return view('admin.doctor.edit', compact('doctor'));
         }
     }
