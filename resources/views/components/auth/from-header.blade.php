@@ -2,8 +2,8 @@
     <div class="row">
         <div class="col-7">
             <div class="text-primary p-4">
-               <h5 class="text-primary">{{$heading}}</h5>
-               <p>{{$header_p}}</p>
+                <h5 class="text-primary">{{ $head }}</h5>
+                <p>{{ $headtest }}</p>
             </div>
         </div>
         <div class="col-5 align-self-end">
