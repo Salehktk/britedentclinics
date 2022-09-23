@@ -86,6 +86,7 @@ Route::group(['middleware' => ['auth']], function () {
             Route::get('delete_field/{id}', [FieldController::class, 'delete_field'])->name('delete_field');
             Route::post('edit_field', [FieldController::class, 'edit_field_response'])->name('edit_field_response');
             Route::get('edit_field/{id?}', [FieldController::class, 'edit_field'])->name('edit_field');
+            Route::post('get_field_of_service', [FieldController::class, 'get_field_of_service'])->name('get_field_of_service');
         });
     });
 
