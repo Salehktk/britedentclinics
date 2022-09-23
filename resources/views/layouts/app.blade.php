@@ -26,7 +26,7 @@
     @yield('styles')
 </head>
 
-<body id="page-top" style="background-color: #0d3562">
+<body id="page-top" class="bg-light">
     <div id="wrapper">
 
         @yield('content')

@@ -1,4 +1,4 @@
-<div class="bg-white shadow-sm rounded-start rounded-end">
+<div class="bg-white shadow-sm ">
     <div class="card rounded-start rounded-end">
         <img src="{{ asset('assets/img/sidebar_bg.png') }}" class="card-img" alt="background image">
         <div class="card-img-overlay">
