@@ -33,9 +33,8 @@ class FieldController extends Controller
     public function fields()
     {
         $fields = $this->all_fields();
-        $services = $this->_services->all_services();
 
-        return view('admin.doctor.fields', compact('fields', 'services'));
+        return view('admin.doctor.fields', compact('fields'));
     }
 
     public function add_field()

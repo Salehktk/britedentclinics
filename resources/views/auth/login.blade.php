@@ -1,9 +1,10 @@
 @extends('layouts.app')
 
-@section('PAGE_TITLE') Login @endsection
+@section('PAGE_TITLE')
+    Login
+@endsection
 
 @section('content')
-
 <div class="my-5 pt-5 ">
     <div class="container"> 
         <div class="row d-flex align-items-center justify-content-center" >
@@ -26,13 +27,15 @@
                             </div>
                                 <div class="col-md-12">
                                     <div class="form-check">
-                                        <input class="form-check-input" type="checkbox" name="remember" id="remember" {{ old('remember') ? 'checked' : '' }}>
-    
+                                        <input class="form-check-input" type="checkbox" name="remember" id="remember"
+                                            {{ old('remember') ? 'checked' : '' }}>
+
                                         <label class="form-check-label" for="remember">
                                             {{ __('Remember Me') }}
                                         </label>
                                     </div>
                                 </div>
+
                             <div class="col-12">
                                 <div class="col-md-12">
                                     <button type="submit" class="btn btn-primary btn-sm">
@@ -44,16 +47,15 @@
                                         </a>
                                     @endif
                                 </div>
-                            </div>
-                        </form>
-    
-                        <hr>
-                        <h6 class="card-subtitle mb-2 ">Don't have account? <a href="{{ route('register') }}"> Create an account </a></h6>
+                            </form>
+
+                            <hr>
+                            <h6 class="card-subtitle mb-2 ">Don't have account? <a href="{{ route('register') }}"> Create
+                                    an account </a></h6>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 @endsection

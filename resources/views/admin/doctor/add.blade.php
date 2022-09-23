@@ -5,15 +5,15 @@
 @endsection
 
 @section('dashboard_content')
-    <div class="row mt-4">
-        <div class="col-md-7 mb-4 mx-auto">
-            <div class="card border-0 shadow-sm">
-                {{-- <div class="card-header">
-                    <div class="card-title">Personal Information</div>
-                </div> --}}
-                <div class="card-body">
-                    <form action="{{ route('add_doctor') }}" method="post" class="row needs-validation" novalidate>
-                        @csrf
+    <form action="{{ route('add_doctor') }}" method="post" class="row needs-validation" novalidate>
+        @csrf
+        <div class="row mt-4">
+            <div class="col-md-6 mb-4 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header">
+                        <div class="card-title">Personal Information</div>
+                    </div>
+                    <div class="card-body">
                         <div class="row mx-auto">
                             <div class="col-md-4">
                                 <div class=" d-flex flex-column" style="width: 150px;">
@@ -65,21 +65,33 @@
                             </div>
                             <div class="col-md-6 col-12">
                                 <x-input-label name="Degree" for="degree" />
-                                <x-input-field type="degree" name="degree" id="degree" place="ex. MBBS, FBS"
+                                <x-input-field type="degree" name="degree" id="degree" place="ex. MBBS, etc"
                                     val="" />
                             </div>
                         </div>
-
-                        <div class="row mx-auto">
-                            <div class="col-12">
-                                <button class="btn btn-outline-primary btn-sm" type="submit">Submit</button>
-                            </div>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-6 mb-4 mx-auto">
+                <div class="card border-0 shadow-sm">
+                    <div class="card-header">
+                        <div class="card-title">Availability Information</div>
+                    </div>
+                    <div class="card-body">
+                        <div class="col-md-12 mb-2">
+                            <x-input-label name="Service" for="service_id" />
+                            <x-services-list />
                         </div>
-                    </form>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
+        <div class="row">
+            <div class="col-12 mb-4 text-end">
+                <button class="btn btn-outline-primary btn-sm" type="submit">Submit</button>
+            </div>
+        </div>
+    </form>
 @endsection
 
 @section('dashboard_script')
