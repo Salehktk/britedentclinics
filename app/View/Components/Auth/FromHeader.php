@@ -6,22 +6,19 @@ use Illuminate\View\Component;
 
 class FromHeader extends Component
 {
-
-    public $heading;
-    public $header_p;
+    public $head = null;
+    public $headtest = null;
 
     /**
      * Create a new component instance.
      *
      * @return void
      * 
-     * 
      */
-    public function __construct($heading, $header_p)
+    public function __construct($head, $headtest)
     {
-       $this->heading = $heading;
-       $this->header_p = $header_p;
-       
+        $this->head = $head;
+        $this->headtest = $headtest;
     }
 
     /**
