@@ -78,26 +78,8 @@
                         <form action="{{ route('add_field') }}" method="post" class="row g-3 needs-validation" novalidate>
                             @csrf
                             <div class="col-md-12 mb-2">
-                                <label for="service_id" class="form-label mb-2">Service: <span
-                                        class="text-danger">*</span></label>
-                                <div class="input-group has-validation">
-                                    <select name="service_id" id="service_id" class="form-control" required>
-                                        <option value="">Select Service</option>
-                                        @foreach ($services as $service)
-                                            <option value="{{ $service->id }}">{{ $service->name }}</option>
-                                        @endforeach
-                                    </select>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        @if ($errors->has('service_id'))
-                                            {{ $errors->first('service_id') }}
-                                        @else
-                                            Please choose a service.
-                                        @endif
-                                    </div>
-                                </div>
+                                <x-input-label name="Service" for="service_id" />
+                                <x-services-list />
                             </div>
                             <div class="col-md-12 mb-2">
                                 <x-input-label name="Field" for="field" />
