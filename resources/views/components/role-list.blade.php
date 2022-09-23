@@ -1,5 +1,5 @@
 <div class="col-md-12">
-    <label for="role" class="form-label">Select Role</label>
+    <label for="role" class="form-label mb-2" >Select Role <span class="text-danger">*</span></label>
     <select name="role" id="role" class="form-control @error('role') is-invalid @enderror" required autocomplete="current-role">
         <option value="">Select Your Role</option>
         @foreach ($roles as $role)
