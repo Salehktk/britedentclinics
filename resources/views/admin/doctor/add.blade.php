@@ -108,5 +108,23 @@
             };
             reader.readAsDataURL(event.target.files[0]);
         };
+
+        $('#service_id').on('change', function() {
+            var service_id = $(this).val()
+
+            $.ajax({
+                type: "POST",
+                url: "{{ route('get_field_of_service') }}",
+                data: {
+                    id: service_id
+                },
+                headers: {
+                    'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                },
+                success: function(response) {
+                    console.log(response);
+                }
+            })
+        })
     </script>
 @endsection

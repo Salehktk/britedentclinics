@@ -9,18 +9,16 @@ class FieldController extends Controller
 {
     private $_request = null;
     private $_modal = null;
-    private $_services = null;
 
     /**
      * Create a new controller instance.
      *
      * @return $reauest, $modal
      */
-    public function __construct(Request $request, Field $modal, ServiceController $services)
+    public function __construct(Request $request, Field $modal)
     {
         $this->_request = $request;
         $this->_modal = $modal;
-        $this->_services = $services;
     }
 
     public function all_fields()
@@ -78,5 +76,11 @@ class FieldController extends Controller
         $field->update();
 
         return redirect()->route('fields');
+    }
+
+    public function get_field_of_service()
+    {
+        $service_id = $this->_modal->where('service_id', $this->_request->id)->get();
+        dd($service_id);
     }
 }
