@@ -3,15 +3,15 @@
         <nav class="nav" aria-label="Secondary navigation">
             {{-- condition for change dynamicly components --}}
             @hasrole('admin')
-            <x-navbars.admin-sub-nav />
+                <x-navbars.admin-sub-nav />
             @endhasrole
 
             @hasrole('doctor')
-            <x-navbars.doctor-sub-nav />
+                <x-navbars.doctor-sub-nav />
             @endhasrole
 
             @hasrole('patient')
-            <x-navbars.patient-sub-nav />
+                <x-navbars.patient-sub-nav />
             @endhasrole
         </nav>
     </div>
