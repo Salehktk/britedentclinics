@@ -8,7 +8,7 @@
     <!-- CSRF Token -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
 
-    <title>@yield('PAGE_TITLE')</title>
+    <title> {{ config('app.name') }} - @yield('PAGE_TITLE')</title>
 
     {{-- bootstrap css file --}}
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet"

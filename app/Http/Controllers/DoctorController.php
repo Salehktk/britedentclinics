@@ -37,7 +37,8 @@ class DoctorController extends Controller
 
     public function add_doctor()
     {
-        dd($this->_request->except('_token'));
+        $data = $this->_request->except('_token');
+        dd($data);
     }
 
     public function edit_doctor_view($id)

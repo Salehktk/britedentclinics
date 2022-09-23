@@ -100,22 +100,9 @@
                                 </div>
                             </div>
                             <div class="col-md-12 mb-2">
-                                <label for="field" class="form-label mb-2">field: <span
-                                        class="text-danger">*</span></label>
-                                <div class="input-group has-validation">
-                                    <input type="text" class="form-control" id="field" name="name"
-                                        placeholder="field" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        @if ($errors->has('name'))
-                                            {{ $errors->first('name') }}
-                                        @else
-                                            Please choose a field.
-                                        @endif
-                                    </div>
-                                </div>
+                                <x-input-label name="Field" for="field" />
+                                <x-input-field type="text" name="name" id="field" place="ex. Heart"
+                                    val="" />
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-outline-primary btn-sm" type="submit">Submit</button>
@@ -124,7 +111,7 @@
                     </div>
                 </div>
             </div>
-           
+
         </div>
     </div>
 @endsection
