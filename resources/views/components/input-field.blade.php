@@ -1,6 +1,6 @@
 <div class="input-group has-validation">
-    <input type="{{ $type }}" class="form-control" id="{{ $id }}" name="{{ $name }}"
-        placeholder="{{ $place }}" required @error($name) is-invalid @enderror
+    <input type="{{ $type }}" class="form-control @error($name) is-invalid @enderror" id="{{ $id }}" name="{{ $name }}"
+        placeholder="{{ $place }}" required 
         value="{{ $val == '' ? old($name) : $val }}">
 
     <div class="valid-feedback">
@@ -10,7 +10,7 @@
         @if ($errors->has($name))
             {{ $errors->first($name) }}
         @else
-            Please choose an {{ $name }}.
+            Please choose {{ $name }}.
         @endif
     </div>
 </div>
