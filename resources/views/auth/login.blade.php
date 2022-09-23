@@ -15,12 +15,12 @@
                             <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation" novalidate>
                                 @csrf
                                 <div class="col-md-12">
-                                    <x-input-label name="Email Address" for="email" />
-                                    <x-input-field type="email" name="email" id="email" place="Enter Your Email"
+                                    <x-input-label name="Email Address / Phone NO" for="email" required='true' />
+                                    <x-input-field type="text" name="email" id="email" place="Enter Your Email"
                                         val="" />
                                 </div>
                                 <div class="col-md-12">
-                                    <x-input-label name="Password" for="password" />
+                                    <x-input-label name="Password" for="password" required='true' />
                                     <x-input-field type="password" name="password" id="password" place="Enter Password"
                                         val="" />
                                 </div>

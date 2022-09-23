@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg fixed-top navbar-dark" aria-label="Main navigation">
     <div class="container">
-        <a class="navbar-brand" href="{{ route('index') }}">DSMS</a>
+        <a class="navbar-brand" href="{{ route('index') }}">{{ config('app.name') }}</a>
         <button class="navbar-toggler p-0 border-0" type="button" id="navbarSideCollapse" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>

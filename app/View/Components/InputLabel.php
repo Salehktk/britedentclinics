@@ -8,16 +8,19 @@ class InputLabel extends Component
 {
     public $name;
     public $for;
+    public $required;
 
     /**
      * Create a new component instance.
      *
      * @return void
      */
-    public function __construct($name, $for)
+    public function __construct($name, $for, $required = null)
     {
         $this->name = $name;
         $this->for = $for;
+        $this->required = $required;
+
     }
 
     /**

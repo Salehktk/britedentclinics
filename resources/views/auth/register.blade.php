@@ -9,81 +9,33 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-5 rounded-start">
                     <div class="bg-white shadow-sm rounded-start rounded-end">
-                        <x-auth.from-header head="REGISTRATION!" head1="Start your journey with us" />
+                        <x-auth.from-header head="REGISTRATION!" headtest="Start your journey with us" />
                         <div class="p-4">
                             <form method="POST" action="{{ route('register') }}" class="row g-3 needs-validation" novalidate>
                                 @csrf
                                 <div class="col-md-12">
-                                    <label for="name" class="form-label">{{ __('Full Name') }}</label>
-                                    <input id="name" type="text"
-                                        class="form-control @error('name') is-invalid @enderror" name="name"
-                                        value="{{ old('name') }}" required autocomplete="name" autofocus>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        @if ($errors->has('name'))
-                                            {{ $errors->first('name') }}
-                                        @else
-                                            Please choose a name.
-                                        @endif
-                                    </div>
+                                    <x-input-label name="Full Name" for="name" required='' />
+                                    <x-input-field type="text" name="name" id="name" place="Enter Your Full Name"
+                                        val="" />
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label for="email" class="form-label">{{ __('e-Mail') }}</label>
-
-                                    <input id="email" type="email"
-                                        class="form-control @error('email') is-invalid @enderror" name="email"
-                                        value="{{ old('email') }}" required autocomplete="email">
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        @if ($errors->has('email'))
-                                            {{ $errors->first('email') }}
-                                        @else
-                                            Please choose a email.
-                                        @endif
-                                    </div>
+                                    <x-input-label name="E-Mail" for="email" required='true' />
+                                    <x-input-field type="email" name="email" id="email" place="Enter Your Email"
+                                        val="" />
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label for="phone" class="form-label">{{ __('Phone') }}</label>
-
-                                    <input id="phone" type="text"
-                                        class="form-control @error('phone') is-invalid @enderror" name="phone"
-                                        value="{{ old('phone') }}" required autocomplete="phone">
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        @if ($errors->has('phone'))
-                                            {{ $errors->first('phone') }}
-                                        @else
-                                            Please choose a phone.
-                                        @endif
-                                    </div>
+                                    <x-input-label name="Phone" for="phone" required='' />
+                                    <x-input-field type="phone" name="phone" id="phone" place="Enter Your Phone Number"
+                                        val="" />
                                 </div>
 
                                 <div class="col-md-12">
-                                    <label for="password" class="form-label">Password</label>
-
-                                    <input id="password" type="password"
-                                        class="form-control @error('password') is-invalid @enderror" name="password"
-                                        required autocomplete="current-password">
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        @if ($errors->has('password'))
-                                            {{ $errors->first('password') }}
-                                        @else
-                                            Please choose a password.
-                                        @endif
-                                    </div>
+                                    <x-input-label name="Password" for="password" required='true' />
+                                    <x-input-field type="password" name="password" id="password" place="Enter at least 8 characters password"
+                                        val="" />
                                 </div>
-
                                 <x-role-list />
 
                                 <div class="col-12">
@@ -104,103 +56,4 @@
             </div>
         </div>
     </div>
-
-
-
-
-
-
-
-    {{-- <div class="container">
-    <div class="row d-flex align-items-center justify-content-center" style="height: 100vh;">
-        <div class="col-6">
-            <div class="card mx-auto border-0 shadow" style="width: 22rem;">
-                <div class="card-body">
-                    <h5 class="card-title mb-2">{{ __('Register') }}</h5>
-                    <h6 class="card-subtitle mb-2 text-muted">Start your new journey with us.</h6>
-                    <hr>
-
-                    <form method="POST" action="{{ route('register') }}" class="row g-3 needs-validation" novalidate>
-                        @csrf
-                        <div class="col-md-12">
-                            <label for="name" class="form-label">{{ __('Full Name') }}</label>
-                            <input id="name" type="text" class="form-control @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}" required autocomplete="name" autofocus>
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                @if ($errors->has('name'))
-                                    {{ $errors->first('name') }}
-                                @else
-                                    Please choose a name.
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <label for="email" class="form-label">{{ __('e-Mail') }}</label>
-                            
-                            <input id="email" type="email" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                @if ($errors->has('email'))
-                                    {{ $errors->first('email') }}
-                                @else
-                                    Please choose a email.
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <label for="phone" class="form-label">{{ __('Phone') }}</label>
-                            
-                            <input id="phone" type="text" class="form-control @error('phone') is-invalid @enderror" name="phone" value="{{ old('phone') }}" required autocomplete="phone">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                @if ($errors->has('phone'))
-                                    {{ $errors->first('phone') }}
-                                @else
-                                    Please choose a phone.
-                                @endif
-                            </div>
-                        </div>
-
-                        <div class="col-md-12">
-                            <label for="password" class="form-label">Password</label>
-                            
-                            <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                            <div class="valid-feedback">
-                                Looks good!
-                            </div>
-                            <div class="invalid-feedback">
-                                @if ($errors->has('password'))
-                                    {{ $errors->first('password') }}
-                                @else
-                                    Please choose a password.
-                                @endif
-                            </div>
-                        </div>
-
-                        <x-role-list/>
-                        
-                        <div class="col-12">
-                            <div class="col-md-12">
-                                <button type="submit" class="btn btn-primary btn-sm">
-                                    {{ __('Register') }}
-                                </button>
-                            </div>
-                        </div>
-                    </form>
-
-                    <hr>
-                    <h6 class="card-subtitle mb-2 text-muted">Already have account? <a href="{{ route('login') }}"> Login </a></h6>
-                </div>
-            </div>
-        </div>
-    </div>
-</div> --}}
 @endsection

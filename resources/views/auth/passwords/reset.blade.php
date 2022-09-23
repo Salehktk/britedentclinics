@@ -6,7 +6,7 @@
             <div class="row d-flex align-items-center justify-content-center">
                 <div class="col-5 rounded-start">
                     <div class="bg-white shadow-sm rounded-start rounded-end">
-                        <x-auth.from-header head="Reset Password" head1="Forgot your password?" />
+                        <x-auth.from-header head="Reset Password" headtest="Forgot your password?" />
                         <div class="p-4">
                             <form method="POST" action="{{ route('password.update') }}" class="row g-3 needs-validation">
                                 @csrf
