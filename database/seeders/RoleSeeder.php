@@ -39,13 +39,16 @@ class RoleSeeder extends Seeder
         $user1 = new User;
         $user1->name = 'admin';
         $user1->email = 'admin@gmail.com';
+        $user1->phone = '1234';
         $user1->password = Hash::make('admin123');
+        
         $user1->save();
         $user1->assignRole('admin');
 
         $user2 = new User;
         $user2->name = 'doctor';
         $user2->email = 'doctor@gmail.com';
+        $user2->phone = '12345';
         $user2->password = Hash::make('test1234');
         $user2->save();
         $user2->assignRole('doctor');
@@ -53,6 +56,7 @@ class RoleSeeder extends Seeder
         $user3 = new User;
         $user3->name = 'patient';
         $user3->email = 'patient@gmail.com';
+        $user3->phone = '12346';
         $user3->password = Hash::make('test1234');
         $user3->save();
         $user3->assignRole('patient');

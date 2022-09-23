@@ -19,6 +19,7 @@ class CreateDoctorServicesFieldsTable extends Migration
             $table->foreign('doctor_services_id')->references('id')->on('doctor_services')->onDelete('cascade')->onUpdate('cascade');
             $table->unsignedBigInteger('fields_id')->nullable();
             $table->foreign('fields_id')->references('id')->on('fields')->onDelete('cascade')->onUpdate('cascade');
+            $table->string('fees')->nullable();
             $table->timestamps();
         });
     }
