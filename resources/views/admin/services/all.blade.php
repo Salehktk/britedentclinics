@@ -70,6 +70,8 @@
             </div>
         </div>
         <div class="col-md-4 mb-4">
+            <div id="edit_service_response"></div>
+
             <div class="row mb-3">
                 <div class="col-md-12 col-12">
                     <div class="card border-0 shadow-sm p-3">
@@ -78,21 +80,9 @@
                             novalidate>
                             @csrf
                             <div class="col-md-12 mb-2">
-                                <label for="service" class="form-label mb-2">service: <span class="text-danger">*</span></label>
-                                <div class="input-group has-validation">
-                                    <input type="text" class="form-control" id="service" name="name"
-                                        placeholder="service" required>
-                                    <div class="valid-feedback">
-                                        Looks good!
-                                    </div>
-                                    <div class="invalid-feedback">
-                                        @if ($errors->has('name'))
-                                            {{ $errors->first('name') }}
-                                        @else
-                                            Please choose a service.
-                                        @endif
-                                    </div>
-                                </div>
+                                <x-input-label name="Service" for="service" />
+                                <x-input-field type="text" name="name" id="service" place="ex. Heart Surgery"
+                                    val="" />
                             </div>
                             <div class="col-12">
                                 <button class="btn btn-outline-primary btn-sm" type="submit">Submit</button>
@@ -101,7 +91,6 @@
                     </div>
                 </div>
             </div>
-            <div id="edit_service_response"></div>
         </div>
     </div>
 @endsection

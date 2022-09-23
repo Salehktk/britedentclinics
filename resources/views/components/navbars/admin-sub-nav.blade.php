@@ -21,7 +21,7 @@
         <li><a class="dropdown-item" href="#">Add</a></li>
     </ul>
 </li>
-<li class="nav-item dropdown">
+{{-- <li class="nav-item dropdown">
     <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
         <i class="fad fa-user-circle"></i> Receptionist
     </a>
@@ -29,7 +29,7 @@
         <li><a class="dropdown-item" href="#">All</a></li>
         <li><a class="dropdown-item" href="#">Add</a></li>
     </ul>
-</li>
+</li> --}}
 <li class="nav-item">
     <a class="nav-link" aria-current="page" href="{{ route('dashboard') }}"> <i class="fad fa-layer-plus"></i>
         Appointment List</a>

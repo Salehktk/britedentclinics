@@ -1,7 +1,7 @@
 @extends('layouts.app')
 @section('styles')
     <link href="{{ asset('assets/css/offcanvas.css') }}" rel="stylesheet">
-    
+
     {{-- datatable css files --}}
     <link href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/5.1.3/css/bootstrap.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/1.12.1/css/dataTables.bootstrap5.min.css" rel="stylesheet">
@@ -26,6 +26,16 @@
 
         @yield('dashboard_content')
     </div>
+
+    <section class="footer bg-dark">
+        <div class="container">
+            <div class="row p-2">
+                <div class="col-md-12 col-12 text-white">
+                    <p>2022 © Brite Dent Clinics</p>
+                </div>
+            </div>
+        </div>
+    </section>
 @endsection
 
 @section('scripts')
