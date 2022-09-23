@@ -9,51 +9,20 @@
         <div class="row d-flex align-items-center justify-content-center" >
             <div class="col-5 rounded-start" >
                 <div class="bg-white shadow-sm rounded-start rounded-end">
-                    <div class="" style="background:#D4DBF9;">
-                        <div class="row">
-                            <div class="col-7">
-                                <div class="text-primary p-4">
-                                   <h5 class="text-primary">Welcome Back !</h5>
-                                   <p>Sign in to continue to Doctorly.</p>
-                                </div>
-                            </div>
-                            <div class="col-5 align-self-end">
-                                <img src="{{ asset('assets/img/profile-img.png') }}" class="img-fluid" alt="background image">
-                            </div>
-                        </div>
-                    </div>
+                   <x-auth.from-header heading="welcom back!" header_p="Sign In To Continue" />
                     <div class="p-4">
                         <form method="POST" action="{{ route('login') }}" class="row g-3 needs-validation" novalidate>
                             @csrf
                             <div class="col-md-12">
-                                <label for="email" class="form-label">{{ __('Email Address') }}</label>
-                                <input id="email" type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required autocomplete="email" autofocus>
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    @if ($errors->has('email'))
-                                        {{ $errors->first('email') }}
-                                    @else
-                                        Please choose a email.
-                                    @endif
-                                </div>
+
+                                <x-input-label name="Email Address" for="email" />
+                                <x-input-field type="email" name="email" id="email" place="Enter Your Email"
+                                    val="" />
                             </div>
-    
                             <div class="col-md-12">
-                                <label for="password" class="form-label">Password</label>
-                                
-                                <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password" required autocomplete="current-password">
-                                <div class="valid-feedback">
-                                    Looks good!
-                                </div>
-                                <div class="invalid-feedback">
-                                    @if ($errors->has('password'))
-                                        {{ $errors->first('password') }}
-                                    @else
-                                        Please choose a password.
-                                    @endif
-                                </div>
+                                <x-input-label name="Password" for="password" />
+                                <x-input-field type="password" name="password" id="password" place="Enter Password"
+                                    val="" />
                             </div>
                                 <div class="col-md-12">
                                     <div class="form-check">
@@ -69,7 +38,6 @@
                                     <button type="submit" class="btn btn-primary btn-sm">
                                         {{ __('Login') }}
                                     </button>
-    
                                     @if (Route::has('password.request'))
                                         <a class="btn btn-link" href="{{ route('password.request') }}">
                                             {{ __('Forgot Your Password?') }}
