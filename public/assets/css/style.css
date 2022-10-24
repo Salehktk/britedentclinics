@@ -1,0 +1,119 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600;800;900&display=swap');
+
+:root {
+    --black-color: black;
+    --white-color: white;
+    --main-font-family: 'Poppins', sans-serif;
+    --main-heading-size: 2.45rem;
+    --main-heading-weight: 500;
+    --sub-heading-size: 1rem;
+    --sub-heading-weight: 400;
+    --paragraph-size: 0.8rem;
+    --paragraph-weight: 300;
+    --text-transform: uppercase;
+    --letter-spacing: 0.1rem;
+    --line-height: 2rem;
+    --active-font-weight: 600;
+    --transition: all 0.3s ease 0s;
+    --margin-top: 5rem;
+    --margin-bottom: 5rem;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    -webkit-font-smoothing: antialiased;
+    -webkit-appearance: none;
+    scroll-behavior: smooth;
+    font-family: var(--main-font-family);
+    scroll-behavior: smooth;
+}
+
+*::placeholder {
+    /* Chrome, Firefox, Opera, Safari 10.1+ */
+    color: var(--black-color) !important;
+    opacity: 0.5 !important;
+    font-weight: var(--paragraph-weight);
+    /* Firefox */
+}
+
+*:-ms-input-placeholder {
+    /* Internet Explorer 10-11 */
+    color: var(--black-color) !important;
+    font-weight: var(--paragraph-weight);
+}
+
+*::-ms-input-placeholder {
+    /* Microsoft Edge */
+    color: var(--black-color) !important;
+    font-weight: var(--paragraph-weight);
+}
+
+.navbar {
+    background-color: #2a3042 !important;
+}
+
+.nav-link:hover {
+    color: #9fa2aa !important;
+}
+
+.btn-primary {
+    background-color: #556ee6 !important;
+}
+
+*:focus {
+    outline: none !important;
+    box-shadow: none !important;
+}
+
+a {
+    transition: var(--transition) !important;
+    /* color: var(--blue-color) !important; */
+    font-weight: var(--active-font-weight) !important;
+    text-decoration: none !important;
+}
+
+h1 .h1 {
+    font-size: var(--main-heading-size) !important;
+    font-weight: var(--main-heading-weight) !important;
+}
+
+h2,
+.h2 {
+    font-size: var(--sub-heading-size) !important;
+    font-weight: var(--sub-heading-weight) !important;
+}
+
+h5,
+.h5 {
+    font-size: 1rem !important;
+    font-weight: var(--main-heading-weight) !important;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    text-transform: var(--text-transform) !important;
+    color: var(--black-color) !important;
+    letter-spacing: var(--letter-spacing) !important;
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
+
+.letter_space {
+    letter-spacing: var(--letter-spacing);
+}
+
+.paragh,
+p,
+label {
+    letter-spacing: var(--letter-spacing);
+    font-size: var(--paragraph-size) !important;
+    font-weight: var(--paragraph-weight) !important;
+    /* line-height: var(--line-height); */
+    text-transform: capitalize;
+    margin-top: 0rem !important;
+    margin-bottom: 0rem !important;
+}
